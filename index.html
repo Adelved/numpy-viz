@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+    
+    <title>Numpy-Viz</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="icon" type="png" href="./resources/nvicon_wo_background.png">
+   
+  </head>
+
+	<body>
+
+    <div id='controls'>
+    
+    <label for="file-upload" class="custom-file-upload">
+      Upload Data
+      <input id="file-upload" type="file" accept=".npy"/>
+    </label>
+
+
+    <!--label class="c-container">
+      <input type="checkbox" checked="checked" id='input-format'>
+      <span class="c-checkmark"></span>
+    </label --->
+    
+  
+    
+    <!--input type="file" accept=".npy" class="green-button"-->
+    <!--button class="green-button" id="myBtn">Render Cube</button-->
+      
+    </div>
+    <br>
+
+    <div class=sliderdiv style="position: relative;">
+      <label class="container">
+        <input type="checkbox" checked="checked" id='xcheck'>
+        <span class="checkmark"></span>
+      </label>
+      <input type="range" min="0" max="127" value="64" class="slider" id="xRange">
+      <a style = "position:relative; margin-left: 5px; color:white;" class=sliderval >X: <span id="xval"></span></a>
+      <br>
+      <br>
+      <label class="container">
+        <input type="checkbox" checked="checked" id='ycheck'>
+        <span class="checkmark" style='margin-top: 12px;'></span>
+      </label>
+      <input type="range" min="0" max="127" value="64" class="slider" id="yRange" >
+      <a style = "position:relative; margin-left: 5px;color:white;" class=sliderval>Y: <span id="yval" ></span></a>
+      <br>
+      <br>
+      <label class="container">
+        <input type="checkbox" checked="checked" id='zcheck'>
+        <span class="checkmark" style='margin-top: 12px;'></span>
+      </label>
+      <input type="range" min="0" max="127" value="64" class="slider" id="zRange">
+      <a class=sliderval style = "position:relative; margin-left: 5px;color:white;" >Z: <span id="zval" ></span></a> 
+      <br>
+      <button  class="green-button-slider" id='resetCameraBtn'>Center</button>
+      </div>
+      <br>
+      <canvas id="c" width = "1210" height = "600 " class="canvas"></canvas>
+      <br>
+      
+      <div class = "wrapper">
+        <a href="https://github.com/Adelved/numpy-viz">
+        <img src="./resources/githublogo.svg" class ="logo" style="background-color: white;">
+        <a href="https://linkedin.com/in/dennisadelved">
+        <img src="./resources/linkedin.png" class ="logo" style=" margin-left: .5%; background-color: white;" >
+        </div>
+      
+
+    <pre id="header"></pre>
+
+
+    <script src="./js/three.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <script type='module', src="./utils.js"></script>
+    <script type='module' src="./numpyviz.js"></script>
+
+  </body>
+  
+  <footer style="font-family: Arial, Helvetica, sans-serif; font-style: italic; color: white; font-size: 10px;">Created by Dennis Adelved</footer>
+</html>

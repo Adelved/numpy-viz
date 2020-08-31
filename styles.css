@@ -1,6 +1,6 @@
 
 html {
-    margin: 0;
+    margin: auto;
     height: 100%;
     background-color: #232B32;
     
@@ -9,6 +9,7 @@ html {
    body {
       margin: 0;
       height: 100%;
+      width: 100%;
       /*background-image:url("./resources/backgroundImage.jpg")*/
       background-color: #232B32;
 
@@ -16,18 +17,20 @@ html {
 
  canvas {
    background-color: #232B32;
-   top : 0;
-   padding-left: 0;
-   padding-right: 0;
    margin-left: auto;
    margin-right: auto;
    display: block;
-   width: 1200px;
+   width: 70%;
+   height: 60%;
    border:2px solid #e7ebee;
  }
 
  .sliderval{
-   font-size: 13px;
+   font-size: 100%;
+ }
+ 
+ .sliderdiv{
+    margin-left: 15%;
  }
 
  input[type="file"] {
@@ -35,8 +38,8 @@ html {
 }
 
  .custom-file-upload {
-   margin-top: 20px;
-   margin-left: 35px;
+   margin-top: 1%;
+   margin-left: 15%;
 	background-color:#e43f5a;
 	border-radius:24px;
 	border:1px solid #ad2e43;
@@ -73,8 +76,8 @@ html {
 }
 
 .green-button-slider {
-   margin-left: 166px;
-   margin-top: 10px;
+   margin-left: 13%;
+   margin-top: 1%;
 	background-color:#ad2e43;
 	border-radius:24px;
 	border:1px solid #ad2e43;
@@ -256,20 +259,21 @@ input[type=range] {
 
 
  .logo{
-    display: inline-block;
+    display: inline;
     filter: opacity(100%);
     border-radius: 100%;
-    width: 40px;
-    height: 40px;
+    width: 2%;
+    height: 2%;
     border-color: white;
-    margin-left: 50px;
-    margin-bottom: 10px;
+    margin-left: 15%;
+    margin-bottom: 0.5%;
     border: 1px solid transparent;
 
  }
 
  .wrapper{
     background-color:#232B32 ;
+
 
  }
 

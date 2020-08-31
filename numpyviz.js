@@ -30,7 +30,8 @@ function httpGetAsync(theUrl, callback) {
     xmlHttp.responseType = "arraybuffer"; 
     xmlHttp.onreadystatechange = function() { 
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-            console.log(xmlHttp.response)
+            //
+            //console.log(xmlHttp.response)
             callback(xmlHttp.response);
     }
     xmlHttp.open("GET", theUrl, true); // true for asynchronous 
@@ -38,7 +39,7 @@ function httpGetAsync(theUrl, callback) {
 }
 
 function initilizeCheckMarks(){
-    console.log('checkmarks are initilized')
+    //console.log('checkmarks are initilized')
     document.getElementById('xcheck').checked = true;
     document.getElementById('ycheck').checked = true;
     document.getElementById('zcheck').checked = true;
@@ -77,7 +78,7 @@ function parseData(arrBuff){
 
     dataHeight = grays.shape[0];
     dataWidth = grays.shape[1];
-    console.log('dataWidth=',dataWidth)
+    //console.log('dataWidth=',dataWidth)
     dataDepth = grays.shape[2];
 
     document.getElementById('xRange').max = dataHeight;document.getElementById('xRange').value = dataHeight/2;
@@ -145,9 +146,9 @@ function main() {
     const fov = 75;
     const aspect = 2;  // the canvas default
     const near = 0.1;
-    const far = 500;
+    const far = 2000;
     const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-    camera.position.set(100, 100, dataDepth + 200);
+    camera.position.set(100, 100, dataDepth + 50);
 
     
     const scene = new THREE.Scene();
@@ -224,7 +225,7 @@ function getZSlice(index){
 }
     
 function getXSlice(index){
-    console.log('xslice')
+    //console.log('xslice')
     let data = new Uint8Array( 3 * size );
     let normalizedValues = new Uint8Array(size);
     const offset = 1;
@@ -496,7 +497,7 @@ function resizeRendererToDisplaySize(renderer) {
         outputX.innerHTML = xIndex;
         deleteSlice(planeX)
 
-        console.log('event X firing: ', xIndex)
+        //console.log('event X firing: ', xIndex)
         renderX(xIndex)
         requestRenderIfNotRequested();
         }else{
@@ -511,7 +512,7 @@ function resizeRendererToDisplaySize(renderer) {
             outputY.innerHTML = yIndex;
             deleteSlice(planeY)
             
-            console.log('event Y firing: ', yIndex)
+            //console.log('event Y firing: ', yIndex)
             renderY(yIndex)
             requestRenderIfNotRequested();
         }else{
@@ -525,10 +526,10 @@ function resizeRendererToDisplaySize(renderer) {
         if(document.getElementById('zcheck').checked){
             zIndex = parseInt(this.value);
             outputZ.innerHTML = zIndex
-            console.log(planeZ)
+            //console.log(planeZ)
             deleteSlice(planeZ)
             
-            console.log('firing Z event: ', zIndex)
+            //console.log('firing Z event: ', zIndex)
             renderZ(zIndex)
             requestRenderIfNotRequested();
         }else{
@@ -547,7 +548,7 @@ function resizeRendererToDisplaySize(renderer) {
         updateAllSliders(xIndex,yIndex,zIndex)
 
         requestRenderIfNotRequested();
-        console.log('fire')
+        //console.log('fire')
     })
 
     document.getElementById('xcheck').addEventListener('change', function(){
